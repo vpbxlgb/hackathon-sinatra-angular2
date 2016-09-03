@@ -1,14 +1,16 @@
 .SILENT:
 .ONESHELL:
-.PHONY: backend frontend pitch
+.PHONY: backend frontend pitch clean
 
-all: backend frontend pitch
 
 BACKEND_LOCK_FILE=bundle.installed
 
 BACKEND_INIT=backend/$(BACKEND_LOCK_FILE)
 FRONTEND_INIT=frontend/node_modules
 PITCH_INIT=pitch/node_modules
+
+
+all: $(BACKEND_INIT) $(FRONTEND_INIT) $(PITCH_INIT)
 
 
 $(BACKEND_INIT):
@@ -44,3 +46,10 @@ pitch: $(PITCH_INIT)
 	echo "running pitch"
 	cd pitch/
 	npm run reveal
+
+
+clean:
+	rm $(BACKEND_INIT) -rf
+	rm $(FRONTEND_INIT) -rf
+	rm frontend/dist -rf
+	rm $(PITCH_INIT) -rf
