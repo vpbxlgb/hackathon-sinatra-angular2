@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "reveal-md": "0.0.30"
+  },
+  "scripts": {
+    "reveal": "node_modules/.bin/reveal-md slides.md"
+  }
+}
