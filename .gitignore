@@ -1,3 +1,5 @@
+backend/bundle.installed
+
 frontend/node_modules
 frontend/typings
 frontend/dist
