@@ -19,7 +19,9 @@ class API < Sinatra::Base
     end
 
     get "/version" do
-      "0.0.1"
+      {
+        version: "0.0.1"
+      }.to_json
     end
   end
 end
